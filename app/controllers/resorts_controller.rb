@@ -11,7 +11,7 @@ class ResortsController < ApplicationController
   end
 
   def show
-    @resorts = Resorts.all
+    @resort = Resort.find(params[:id])
   end
 
   private
