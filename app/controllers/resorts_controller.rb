@@ -3,6 +3,11 @@ class ResortsController < ApplicationController
   end
 
   def index
+
+  end
+
+  def show
+
     @resorts = Resorts.all
   end
 
