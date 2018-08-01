@@ -3,27 +3,19 @@ class ResortsController < ApplicationController
   end
 
   def index
-
-  end
+  # if params[:query].present?
+  #   @resorts = Resort.where("feature.name ILIKE ?", "%#{params[:query]}%")
+  # else
+  #   @resorts = Resort.all
+  # end
+  @resorts = Resort.all
+end
 
   def show
 
-    @resorts = Resorts.all
   end
 
 
-  def list
-
-
-    # @resorts= Resort.feature.find.each do |resort|
-
-# search for resourts that have a feature
-# list all that match
-
-    # end
-
-
-  end
 
   def show
 
