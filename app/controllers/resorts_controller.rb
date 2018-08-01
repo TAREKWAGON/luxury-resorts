@@ -1,6 +1,5 @@
 class ResortsController < ApplicationController
-  def home
-  end
+  skip_before_action :authenticate_user!, only: :index, :show
 
   def index
   # if params[:query].present?
@@ -9,21 +8,16 @@ class ResortsController < ApplicationController
   #   @resorts = Resort.all
   # end
   @resorts = Resort.all
-end
-
-  def show
-
   end
 
-
-
   def show
-
+    @resorts = Resorts.all
   end
 
   private
 
   def resort_params
     params.require(:resort).permit(:name, :continent, :country, :address, :price, :description )
+
   end
 end
