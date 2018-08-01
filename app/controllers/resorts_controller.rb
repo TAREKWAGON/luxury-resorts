@@ -1,29 +1,12 @@
 class ResortsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index, :show
+
   def index
 
   end
 
   def show
-
     @resorts = Resorts.all
-  end
-
-
-  def list
-
-
-    # @resorts= Resort.feature.find.each do |resort|
-
-# search for resourts that have a feature
-# list all that match
-
-    # end
-
-
-  end
-
-  def show
-
   end
 
   private
