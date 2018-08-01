@@ -10,10 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_040441) do
+ActiveRecord::Schema.define(version: 2018_08_01_084152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "start_date"
+    t.integer "duration"
+    t.integer "total_price"
+    t.bigint "user_id"
+    t.bigint "resort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resort_id"], name: "index_bookings_on_resort_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "resort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resort_id"], name: "index_favourites_on_resort_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "feature_resorts", force: :cascade do |t|
+    t.bigint "feature_id"
+    t.bigint "resort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["feature_id"], name: "index_feature_resorts_on_feature_id"
+    t.index ["resort_id"], name: "index_feature_resorts_on_resort_id"
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resorts", force: :cascade do |t|
+    t.string "name"
+    t.string "continent"
+    t.string "country"
+    t.string "address"
+    t.string "image"
+    t.integer "price"
+    t.string "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_resorts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +82,11 @@ ActiveRecord::Schema.define(version: 2018_08_01_040441) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "resorts"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "favourites", "resorts"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "feature_resorts", "features"
+  add_foreign_key "feature_resorts", "resorts"
+  add_foreign_key "resorts", "users"
 end
