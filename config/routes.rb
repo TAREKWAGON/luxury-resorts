@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'resorts/home'
   get 'resorts/index'
   get 'resorts/show'

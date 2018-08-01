@@ -3,22 +3,10 @@ class ResortsController < ApplicationController
   end
 
   def index
-    @resorts = Resorts.all
-  end
-
-
-  def list
-
-
-    # @resorts= Resort.feature.find.each do |resort|
-
-# search for resourts that have a feature
-# list all that match
-
-    # end
 
 
   end
+
 
   def show
 
