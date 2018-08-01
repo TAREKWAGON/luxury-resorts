@@ -1,37 +1,23 @@
 class ResortsController < ApplicationController
-  def home
-  end
+  skip_before_action :authenticate_user!
 
   def index
-
+  # if params[:query].present?
+  #   @resorts = Resort.where("feature.name ILIKE ?", "%#{params[:query]}%")
+  # else
+  #   @resorts = Resort.all
+  # end
+  @resorts = Resort.all
   end
 
   def show
-
     @resorts = Resorts.all
-  end
-
-
-  def list
-
-
-    # @resorts= Resort.feature.find.each do |resort|
-
-# search for resourts that have a feature
-# list all that match
-
-    # end
-
-
-  end
-
-  def show
-
   end
 
   private
 
   def resort_params
     params.require(:resort).permit(:name, :continent, :country, :address, :price, :description )
+
   end
 end

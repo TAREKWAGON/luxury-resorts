@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :resorts, only: [:home, :index, :show] do
+
+  resources :resorts, only: [:index, :show] do
+
     resources :bookings, only: [:create]
   end
   resources :bookings, only: [:index, :show, :edit, :update]
