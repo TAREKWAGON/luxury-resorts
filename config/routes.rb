@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'bookings/index'
   get 'bookings/new'
   get 'bookings/create'
@@ -9,6 +10,12 @@ Rails.application.routes.draw do
   get 'resorts/home'
   get 'resorts/index'
   get 'resorts/show'
+
+  resources :resorts, only: [:home, :index, :show] do
+    resources :bookings, only: [:create]
+  end
+  resources :bookings, only: [:index, :show, :edit, :update]
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
