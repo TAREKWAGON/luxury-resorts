@@ -2,9 +2,6 @@ class BookingsController < ApplicationController
   def index
   end
 
-  def new
-  end
-
   def create
   end
 
@@ -15,8 +12,5 @@ class BookingsController < ApplicationController
   end
 
   def update
-  end
-
-  def destroy
   end
 end
