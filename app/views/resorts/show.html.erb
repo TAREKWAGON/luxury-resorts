@@ -1,2 +1,14 @@
 <h1>Resorts#show</h1>
 <p>Find me in app/views/resorts/show.html.erb</p>
+
+<h3>Name :  <%=  @resort.name %> <br></h3>
+<p>Continent :  <%=  @resort.continent %> <br></p>
+<p>Country :  <%=  @resort.country %> <br></p>
+<p>Address :  <%=  @resort.address %> <br></p>
+<p>Price :  <%=  @resort.price %> <br></p>
+<p>Description :  <%=  @resort.description %> <br></p>
+
+
+
+<p> <%= link_to "Back to list", resorts_path %>
+</p>
