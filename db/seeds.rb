@@ -9,7 +9,7 @@ Feature.destroy_all
 Resort.destroy_all
 User.destroy_all
 
-user1 = User.create!(email:'email@email.com', password:'password')
+user1 = User.create!(email:'email@email.com', password:'password', is_owner: "False")
 
 feature1 = Feature.create(name: 'Surfing')
 feature1 = Feature.create(name: 'Yoga')
