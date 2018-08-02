@@ -9,6 +9,7 @@
 Resort.destroy_all
 
 resort1 = Resort.create(user_id: 1, name: 'A Resort', continent: 'Asia', country: 'China', address: '123 Place, Shanghai', website: 'http://www.china.com/', image: 'https://pix10.agoda.net/hotelImages/334/334882/334882_14061609470019861047.jpg?s=1024x768', price: '100', description: 'China resort description')
+p resort1.errors.full_messages
 resort2 = Resort.create(user_id: 1, name: 'B Resort', continent: 'Asia', country: 'Indonesia', address: '123 Place, Jakata', website: 'http://www.indonesia.com/', image: 'https://pix10.agoda.net/hotelImages/334/334882/334882_14061609470019861047.jpg?s=1024x768', price: '50', description: 'Indonesia resort description')
 resort3 = Resort.create(user_id: 1, name: 'C Resort', continent: 'Europe', country: 'France', address: '123 Place, Nice', website: 'http://www.france.com/', image: 'https://pix10.agoda.net/hotelImages/334/334882/334882_14061609470019861047.jpg?s=1024x768', price: '150', description: 'France resort description')
 resort4 = Resort.create(user_id: 1, name: 'D Resort', continent: 'South America', country: 'Bolivia', address: '123 Place, La Paz', website: 'http://www.bolivia.com/', image: 'https://pix10.agoda.net/hotelImages/334/334882/334882_14061609470019861047.jpg?s=1024x768', price: '30', description: 'Bolivia resort description')
