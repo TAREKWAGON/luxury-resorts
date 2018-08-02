@@ -1,6 +1,7 @@
 class Resort < ApplicationRecord
   belongs_to :user
   has_many :feature_resorts
+  has_many :features, through: :feature_resorts
   has_many :bookings
   has_many :favorites
   validates :name, presence: true
