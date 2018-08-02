@@ -5,5 +5,5 @@ class Booking < ApplicationRecord
   validates :resort_id, presence: true
   validates :start_date, presence: true
   validates :duration, presence: true
-  validates :total_price, presence: true
+  # validates :total_price, presence: true
 end
