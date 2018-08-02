@@ -2,3 +2,17 @@
 <p>Find me in app/views/resorts/index.html.erb</p>
 
 
+<div class="container">
+  <h3> Resorts</h3>
+  <div class="row">
+    <ul>
+      <% @resorts.each do |resort| %>
+      <div class="col-xs-12 col-sm-4">
+       <div class="card" >
+        <p><%=  link_to resort.name, resort_path(resort) %></p>
+      </div>
+
+      </div>
+      <% end %>
+    </ul>
+  </div>
