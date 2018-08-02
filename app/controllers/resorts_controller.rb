@@ -14,7 +14,9 @@ class ResortsController < ApplicationController
   def show
     @resort = Resort.find(params[:id])
     authorize @resort
+    @booking = Booking.new
   end
+
 
   private
 

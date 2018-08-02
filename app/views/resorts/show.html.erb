@@ -41,6 +41,27 @@
     </div>
   </div>
 
+  <div class="form-show-resort">
+    <%= simple_form_for ([@resort, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :duration %>
+    <%= f.button :submit %>
+  <% end %>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="container-images-show-resort">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 visit-this-resort">
@@ -96,7 +117,7 @@
     </div>
     <p class="price"> <%= @resort.price %>€ </p>
     <p class="per-nigth">/nigth</p>
-    <button type="button" class="btn btn-primary">  Book now  </button>
+    <button type="button" class="btn bouton-footer btn-primary">  Book now  </button>
   </div>
 </footer>
 
