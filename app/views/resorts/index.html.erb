@@ -1,17 +1,46 @@
-<h1>Resorts#index</h1>
-<p>Find me in app/views/resorts/index.html.erb</p>
 
 
-<div class="container">
-  <h3> Resorts</h3>
+<h3>Resorts</h3>
+<!-- <p>Find me in app/views/resorts/index.html.erb</p> -->
+<div class="line">
+</div>
+
+<div class="main-container">
+  <div class="card-container">
   <div class="row">
-    <ul>
+
       <% @resorts.each do |resort| %>
-      <div class="col-xs-12 col-sm-4">
-       <div class="card" >
-        <p><%=  link_to resort.name, resort_path(resort) %></p>
-       </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+       <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
+         </div>
+         <div class=" text ">
+          <div input type="text"><%= link_to "#{resort.country}, ", resort_path(resort), class: 'location' %> <%=link_to resort.continent, resort_path(resort), class: 'location' %></div>
+        <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
+        <div input type="text" class="price"><%="$#{resort.price}" %></div>
       </div>
+    </div>
       <% end %>
-    </ul>
+    </div>
   </div>
+  <div id="map"></div>
+</div>
+<script>
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 52.5206, lng: 13.4098},
+          scrollwheel: false,
+          zoom: 8
+        });
+      }
+    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Gmaps JavaScript -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+        </script>
+
+
