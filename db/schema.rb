@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 2018_08_01_102607) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "favourites", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "resort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["resort_id"], name: "index_favourites_on_resort_id"
-    t.index ["user_id"], name: "index_favourites_on_user_id"
+    t.index ["resort_id"], name: "index_favorites_on_resort_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "feature_resorts", force: :cascade do |t|
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 2018_08_01_102607) do
 
   add_foreign_key "bookings", "resorts"
   add_foreign_key "bookings", "users"
-  add_foreign_key "favourites", "resorts"
-  add_foreign_key "favourites", "users"
+  add_foreign_key "favorites", "resorts"
+  add_foreign_key "favorites", "users"
   add_foreign_key "feature_resorts", "features"
   add_foreign_key "feature_resorts", "resorts"
   add_foreign_key "resorts", "users"
