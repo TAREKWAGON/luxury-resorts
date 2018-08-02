@@ -7,11 +7,13 @@ class ResortsController < ApplicationController
   # else
   #   @resorts = Resort.all
   # end
-  @resorts = Resort.all
+    @resorts = Resort.all
+    authorize @resorts
   end
 
   def show
     @resort = Resort.find(params[:id])
+    authorize @resort
   end
 
   private
