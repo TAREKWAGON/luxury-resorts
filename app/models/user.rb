@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :resorts
   validates :password, presence: true
-  validates_inclusion_of :is_owner, in:[true,false]
 end
