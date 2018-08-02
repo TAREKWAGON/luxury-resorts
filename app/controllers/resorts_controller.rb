@@ -9,11 +9,9 @@ class ResortsController < ApplicationController
   #   @resorts = Resort.all
   # end
     @resorts = Resort.all
-    authorize @resorts
 end
 
   def show
-
     @resort = Resort.find(params[:id])
     authorize @resort
   end
