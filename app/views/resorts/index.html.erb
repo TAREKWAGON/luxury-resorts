@@ -7,7 +7,7 @@
 
 <div class="main-container">
   <div class="card-container">
-  <div class="row">
+  <div class="row deleting-padding">
 
       <% @resorts.each do |resort| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -16,7 +16,7 @@
          <div class=" text ">
           <div input type="text"><%= link_to "#{resort.country}, ", resort_path(resort), class: 'location' %> <%=link_to resort.continent, resort_path(resort), class: 'location' %></div>
         <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
-        <div input type="text" class="price"><%="$#{resort.price}" %></div>
+        <div input type="text" class="price-index"><%="$#{resort.price}" %></div>
       </div>
     </div>
       <% end %>
