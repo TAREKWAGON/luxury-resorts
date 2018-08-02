@@ -6,12 +6,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.resort = @booking.find(resort_id)
+    @booking.resort = @booking.find(params[:resort_id])
     @booking.save
+    redirect_to booking_path(@booking)
   end
 
   def show
-    @booking = current_user.booking(params[:id])
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def edit
@@ -23,6 +25,7 @@ class BookingsController < ApplicationController
       redirect_to booking_path(@booking)
     else
       render :edit
+    end
   end
 
   private
