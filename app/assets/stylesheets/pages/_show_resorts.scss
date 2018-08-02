@@ -1,0 +1,224 @@
+
+.footer {
+  flex-shrink: 0;
+}
+
+.resort-name {
+  height: 500px;
+  margin-left: 30px;
+  background-color: rgb(236, 236, 236);
+  position: relative;
+}
+
+.resort-name p {
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  color: rgb(75, 100, 106);
+  font-size: 15px;
+}
+
+.resort-name h3 {
+  position: absolute;
+  top: 160px;
+  left: 40px;
+  color: rgb(9, 44, 52);
+  font-size: 50px;
+}
+.stars {
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  top: 83px;
+  left: 40px;
+  color: rgb(75, 100, 106);
+}
+
+.resort-picture {
+  height: 500px;
+  margin-right: 30px;
+  background-size: cover !important;
+  background-position: center;
+  position: relative;
+}
+
+.fa-heart {
+  background-color: white;
+  padding: 8px;
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,1);
+box-shadow: 0px 0px 2px 0px rgba(0,0,0,1);
+}
+
+.fa-share-square {
+  background-color: white;
+  padding: 8px;
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 90px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,1);
+box-shadow: 0px 0px 2px 0px rgba(0,0,0,1);
+}
+
+.big-container-show-resort {
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-top: 30px;
+}
+
+.resort-description {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(99, 100, 80);
+  font-weight: lighter;
+  line-height:27px;
+}
+
+.logo-name {
+  height: 200px;
+  position: relative;
+}
+
+.logo-name img {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: 60px;
+  left: 30px;
+}
+
+.logo-name p {
+  position: absolute;
+  top: 80px;
+  left: 120px;
+}
+
+
+.visit-resort img {
+  height: 150px;
+  width: 230px;
+}
+
+.container-images-show-resort {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  background-repeat: no-repeat;
+  color: white;
+  align-items: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+}
+
+
+.banner h3 {
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+.banner h1 {
+  margin-bottom: 35px;
+  font-size: 50px;
+}
+
+.picture {
+ zoom: 50%;
+}
+
+body {
+  background-color: white;
+}
+
+.visit-this-resort {
+  margin-bottom: 30px;
+}
+
+.container-description-show-resort {
+  border-bottom: 1px solid lightgrey;
+}
+
+.footer-show-resort {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    color: black;
+}
+
+.relative-footer {
+  position: relative;
+}
+
+.relative-footer img {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.address-footer {
+  font-size: 15px;
+  color: rgb(75, 100, 106);
+  position: absolute;
+  top: 20px;
+  left: 100px;
+}
+
+.stars-footer {
+  font-size: 10px;
+  color: rgb(75, 100, 106);
+  position: absolute;
+  top: 40px;
+  left: 100px;
+
+}
+
+.price {
+  position: absolute;
+  top: 22px;
+  right: 220px;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(9, 44, 52);
+  border-left: 2px solid lightgrey;
+  padding-left: 20px;
+}
+
+.per-nigth {
+  position: absolute;
+  top: 34px;
+  right: 181px;
+  font-size: 13px;
+  color: rgb(9, 44, 52);
+}
+
+.bouton-footer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+
+
