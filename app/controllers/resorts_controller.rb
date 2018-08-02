@@ -23,3 +23,4 @@ class ResortsController < ApplicationController
 
   end
 end
+
