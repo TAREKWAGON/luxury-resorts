@@ -6,38 +6,26 @@
 </div>
 
 <div class="main-container">
-  <div class="card-container">
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <div class="row-index-resort deleting-padding">
-=======
-    <div class="row deleting-padding">
->>>>>>> 8e4584c2b1e4f66ac2d64ebbecfdfec68a82e800
-=======
+ <div class="card-container">
+   <div class="row deleting-padding">
 
-  <div class="row-index-resort deleting-padding">
+     <% @resorts.each do |resort| %>
+       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+         <%= link_to resort_path(resort) do %>
+           <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
+           </div>
+         <% end %>
+         <div class=" text ">
+           <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
+           <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
+           <div input type="text" class="price-index"><%="€#{resort.price} per/night" %></div>
+         </div>
+       </div>
+     <% end %>
+   </div>
+ </div>
 
-    <div class="row deleting-padding">
-
->>>>>>> b03895687e974b34252f364ebe3efda05c1e82ed
-
-      <% @resorts.each do |resort| %>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-          <%= link_to resort_path(resort) do %>
-            <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
-            </div>
-          <% end %>
-          <div class=" text ">
-            <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
-            <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
-            <div input type="text" class="price-index"><%="€#{resort.price} per/night" %></div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
+ <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
 
 
