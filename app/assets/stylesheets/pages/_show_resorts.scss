@@ -1,6 +1,6 @@
 
-.footer {
-  flex-shrink: 0;
+.container-top-show-resort {
+  margin-top: 20px;
 }
 
 .resort-name {
@@ -151,9 +151,6 @@ body {
   margin-bottom: 30px;
 }
 
-.container-description-show-resort {
-  border-bottom: 1px solid lightgrey;
-}
 
 .footer-show-resort {
     position: fixed;
@@ -229,6 +226,11 @@ body {
   text-decoration: none;
 }
 
+.resort-description, .logo-name {
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
 
 
 
