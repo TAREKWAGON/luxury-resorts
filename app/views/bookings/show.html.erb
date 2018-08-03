@@ -1,5 +1,94 @@
+<div class="big-container-show-boking">
+  <div class="container-header-show-booking">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="text-header-show-booking">
+          <p class="you-are-going-to-discover"> You are going to discover <%= @resort.country %> </p>
+          <p> Reservation code: HM83B53T34.</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+          <button type="button" class="btn btn-info button-header-show-booking">Print</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-info-show-booking">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-7">
+        <div class="container-sub-info">
+          <div class="arrived-show-booking">
+            <div class="row">
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <h5> Arrived </h5>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <p><%= @booking.start_date %></p>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <h5> Duration </h5>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <p><%= @booking.duration %> days</p>
+              </div>
+            </div>
+          </div>
+          <div class="address-show-booking">
+            <div class="row">
+              <div class="col-sm-3 col-md-3 col-lg-3">
+                <h5>Address</h5>
+              </div>
+              <div class="col-sm-9 col-md-9 col-lg-9">
+                <p class="p1"><%= @resort.continent %></p>
+                <p class="p2"><%= @resort.country %></p>
+                <p class="p3"><%= @resort.address %></p>
+              </div>
+            </div>
+          </div>
+          <div class="price-show-booking">
+            <div class="row">
+              <div class="col-sm-3 col-md-3 col-lg-3">
+                <h5>Price</h5>
+              </div>
+              <div class="col-sm-9 col-md-9 col-lg-9">
+                <p><%= @booking.total_price %> €</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <div class="row">
+          <div class="logo-name-show-resort">
+            <img src="http://phm-hotels.com/friihotels/wp-content/uploads/2018/01/FRiiBaliEchoBeach.png">
+            <p>Frii Hotel Bali</p>
+            <p>You need some help to plan your trip ? <br> Contact the resort to get some help.</p>
+            <button type="button" class="btn btn-danger">Contact the resort</button>
+            <p><i class="fas fa-phone-square"></i> +65 000 0000 00</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="resort-picture-show-booking" style=" background-image: url('https://ihg.scene7.com/is/image/ihg/intercontinental-moorea-4021204937-2x1?fit=fit,1&wid=2400&hei=1200');">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
+
+
 
 <%= @booking.user %>
 <%= @booking.resort %>

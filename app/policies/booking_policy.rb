@@ -5,6 +5,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
+    # record.user == user
     return true
   end
 
