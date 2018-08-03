@@ -14,9 +14,9 @@
        <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
          </div>
          <div class=" text ">
-          <div input type="text"><%= link_to "#{resort.country}, ", resort_path(resort), class: 'location' %> <%=link_to resort.continent, resort_path(resort), class: 'location' %></div>
+          <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
         <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
-        <div input type="text" class="price-index"><%="$#{resort.price}" %></div>
+        <div input type="text" class="price-index"><%="€#{resort.price} per/night" %></div>
       </div>
     </div>
       <% end %>
@@ -42,5 +42,7 @@
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
         </script>
+
+
 
 
