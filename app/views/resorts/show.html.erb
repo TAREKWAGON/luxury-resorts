@@ -41,7 +41,8 @@
     </div>
   </div>
 
-  <div class="form-show-resort">
+
+  <div id="form-show-resort-id" class="form-show-resort">
     <%= simple_form_for ([@resort, @booking]) do |f| %>
     <%= f.input :start_date, as: :date, html5: true%>
     <%= f.input :duration, input_html: { min: 0 } %>
@@ -54,7 +55,7 @@
   <div class="container-images-show-resort">
     <div class="row-show-resort">
       <div class="col-sm-12 col-md-12 col-lg-12 visit-this-resort">
-        <h3>Visit this resort</h3>
+        <h3 id="">Visit this resort</h3>
       </div>
     </div>
     <div class="row-show-resort">
@@ -87,9 +88,9 @@
       </div>
     </div>
 
-<div class="link-back-resorts">
-  <p> <%= link_to "Back to list", resorts_path %></p>
-</div>
+  <div class="link-back-resorts">
+    <p> <%= link_to "Back to list", resorts_path %></p>
+  </div>
 </div>
 
 <footer class="footer-show-resort">
@@ -105,7 +106,7 @@
     </div>
     <p class="price"> <%= @resort.price %>€ </p>
     <p class="per-nigth">/nigth</p>
-    <button type="button" class="btn bouton-footer btn-primary">  Book now  </button>
+    <a href="#booking_start_date"><button type="button" class="btn bouton-footer btn-primary">  Book now  </button></a>
   </div>
 </footer>
 
