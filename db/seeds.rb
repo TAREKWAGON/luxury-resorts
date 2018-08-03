@@ -27,5 +27,5 @@ resort2.features << Feature.all.sample
 resort3.features << Feature.all.sample
 resort4.features << Feature.all.sample
 
-booking1 = Booking.create(start_date: "July", duration: 6, total_price: 120, user: user1, resort: resort1)
+booking1 = Booking.create(start_date: "July", duration: 6, price: 120, user: user1, resort: resort1)
 
