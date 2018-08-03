@@ -7,41 +7,27 @@
 
 <div class="main-container">
   <div class="card-container">
-  <div class="row deleting-padding">
+    <div class="row deleting-padding">
 
       <% @resorts.each do |resort| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-       <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
-         </div>
-         <div class=" text ">
-          <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
-        <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
-        <div input type="text" class="price-index"><%="€#{resort.price} per/night" %></div>
-      </div>
-    </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <%= link_to resort_path(resort) do %>
+            <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
+            </div>
+          <% end %>
+          <div class=" text ">
+            <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
+            <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
+            <div input type="text" class="price-index"><%="€#{resort.price} per/night" %></div>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
-  <div id="map"></div>
+
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
-<script>
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 52.5206, lng: 13.4098},
-          scrollwheel: false,
-          zoom: 8
-        });
-      }
-    </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Gmaps JavaScript -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
-        </script>
+
 
 
 
