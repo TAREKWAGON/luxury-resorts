@@ -11,6 +11,7 @@
           <i class="fas fa-star"></i>
         </div>
         <h3> <%=  @resort.name %> </h3>
+        <h6> <%=  @resort.latitude %></h6>
       </div>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-8">
@@ -43,23 +44,11 @@
 
   <div class="form-show-resort">
     <%= simple_form_for ([@resort, @booking]) do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :duration %>
+    <%= f.input :start_date, as: :date, html5: true%>
+    <%= f.input :duration, input_html: { min: 0 } %>
     <%= f.button :submit %>
   <% end %>
-
   </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
   <div class="container-images-show-resort">
@@ -98,10 +87,9 @@
       </div>
     </div>
 
-
-
-  <p> <%= link_to "Back to list", resorts_path %>
-  </p>
+<div class="link-back-resorts">
+  <p> <%= link_to "Back to list", resorts_path %></p>
+</div>
 </div>
 
 <footer class="footer-show-resort">
