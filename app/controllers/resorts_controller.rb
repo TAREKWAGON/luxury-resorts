@@ -3,18 +3,17 @@ class ResortsController < ApplicationController
   before_action :set_resort, only: [:show, :edit, :update, :destroy]
 
   def index
-    @resorts = if params[:country]
-      Resort.where('country ILIKE ?', "%#{params[:country]}%")
-    else
-     @resorts = Resort.all
+    @resorts = Resort.where.not(latitude: nil, longitude: nil)
+
+    if params[:country].present?
+     @resorts = @resorts.where('country ILIKE ?', "%#{params[:country]}%")
     end
 
-    @resorts = Resort.where.not(latitude: nil, longitude: nil)
     @markers = @resorts.map do |resort|
-      {
-        lat: resort.latitude,
-        lng: resort.longitude
-      }
+    {
+      lat: resort.latitude,
+      lng: resort.longitude
+    }
     end
   end
 
