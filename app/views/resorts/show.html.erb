@@ -45,6 +45,7 @@
     <%= simple_form_for ([@resort, @booking]) do |f| %>
     <%= f.input :start_date, as: :date, html5: true%>
     <%= f.input :duration, input_html: { min: 0 } %>
+    <%= @total_price %>
     <%= f.button :submit %>
   <% end %>
   </div>
