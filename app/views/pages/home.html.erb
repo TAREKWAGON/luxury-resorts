@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+    <header class="masthead text-center bg">
+      <div class="bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <h1 class="banner-text">EXPLORE AND ESCAPE</h1>
+              <h3 class="banner-text">Plan your luxury holiday with the activities you love</h3>
+            </div>
+            <%= form_tag(resorts_path, method: :get) do %>
+            <%= text_field_tag :continent %>
+            <%= text_field_tag :country %>
+            <%= submit_tag 'Search' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+

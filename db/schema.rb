@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_08_03_012510) do
+=======
+ActiveRecord::Schema.define(version: 2018_08_02_044533) do
+>>>>>>> 16461f2e61910502b02d3f37f6823c4927b119ad
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,13 +31,13 @@ ActiveRecord::Schema.define(version: 2018_08_03_012510) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "favourites", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "resort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["resort_id"], name: "index_favourites_on_resort_id"
-    t.index ["user_id"], name: "index_favourites_on_user_id"
+    t.index ["resort_id"], name: "index_favorites_on_resort_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "feature_resorts", force: :cascade do |t|
@@ -81,14 +85,15 @@ ActiveRecord::Schema.define(version: 2018_08_03_012510) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_owner"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookings", "resorts"
   add_foreign_key "bookings", "users"
-  add_foreign_key "favourites", "resorts"
-  add_foreign_key "favourites", "users"
+  add_foreign_key "favorites", "resorts"
+  add_foreign_key "favorites", "users"
   add_foreign_key "feature_resorts", "features"
   add_foreign_key "feature_resorts", "resorts"
   add_foreign_key "resorts", "users"
