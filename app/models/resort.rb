@@ -9,7 +9,7 @@ class Resort < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  has_many :features, through: :feature_resorts
+  has_many :feature, through: :feature_resorts
   has_many :bookings
   has_many :favorite_resorts
   has_many :favorited_by, through: :favorite_resorts, source: :user

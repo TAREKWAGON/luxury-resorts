@@ -10,10 +10,21 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to t(".bookin", default: "Bookings"), bookings_path, class: "btn btn-default" %>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <!--   <%= link_to t(".bookin", default: "Bookings"), bookings_path, class: "btn btn-default" %>
       <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-warning" do %>
             <%= t(".sign_out", default: "Log out") %>
-      <% end %>
+      <% end %> -->
 
       <% else %>
         <!-- Login link (when logged out) -->
