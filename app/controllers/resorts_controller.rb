@@ -5,11 +5,18 @@ class ResortsController < ApplicationController
   def index
     @resorts = Resort.where.not(latitude: nil, longitude: nil)
 
-    if params[:country].present?
-     @resorts = @resorts.where('country ILIKE ?', "%#{params[:country]}%")
+
+    if params[:location].present?
+      sql_query = "country ILIKE :location OR continent ILIKE :location"
+      @resorts = @resorts.where(sql_query, location: "%#{params[:location]}%")
     end
 
-    @markers = @resorts.map do |resort|
+    if params[:feature].present?
+       sql_query = "features.name ILIKE :feature"
+      @resorts = @resorts.joins(:feature).where(sql_query, feature: "%#{params[:feature]}%")
+    end
+
+      @markers = @resorts.map do |resort|
     {
       lat: resort.latitude,
       lng: resort.longitude
