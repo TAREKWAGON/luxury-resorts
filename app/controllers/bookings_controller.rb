@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = current_user
     @booking.resort = Resort.find(params[:resort_id])
+    @resort = @booking.resort
     @booking.price = @booking.resort.price
     if @booking.save
       redirect_to booking_path(@booking)

@@ -1,8 +1,10 @@
 <div class="container-top-show-resort">
-  <div class="row-top-show-resort">
+  <div class="row">
     <div class="hidden-sm-down col-md-6 col-lg-4">
       <div class="resort-name">
-        <p> Resort in <%= @resort.address %></p>
+        <div class="resort-address">
+          <p> Resort in <%= @resort.address %></p>
+        </div>
         <div class="stars">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -14,7 +16,7 @@
       </div>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-8">
-      <div class="resort-picture" style=" background-image: url('https://ihg.scene7.com/is/image/ihg/intercontinental-moorea-4021204937-2x1?fit=fit,1&wid=2400&hei=1200');">
+      <div class="resort-picture" style=" background-image: url(<%= image_path @resort.image %>);">
         <i class="far fa-heart"></i>
         <i class="far fa-share-square"></i>
       </div>
@@ -22,109 +24,75 @@
   </div>
 </div>
 
-<div class="big-container-show-resort">
-  <div class="container-description-show-resort">
-    <div class="row-show-resort-description">
-      <div class="col-sm-12 col-md-6 col-lg-8 resort-description">
-        <p><%=  @resort.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur.</p>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 res">
-        <div class="logo-name">
-          <img src="http://phm-hotels.com/friihotels/wp-content/uploads/2018/01/FRiiBaliEchoBeach.png">
-          <p>Frii Hotel Bali</p>
+
+<div class="resort-description">
+  <p><%=  @resort.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur.</p>
+</div>
+
+
+<!-- <div class="container-images-show-resort"> -->
+  <div class="row-show-resort">
+    <div class="col-sm-12 col-md-12 col-lg-12 visit-this-resort">
+      <h3 id="visit">Visit this resort</h3>
+      <div class="row-show-resort">
+        <div class="visit-resort">
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <img src="http://www.furnishburnish.com/wp-content/uploads/2012/07/making-cozy-home5.jpg">
+            <p>Rooms</p>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <img src="https://www.hurawalhi.com/wp-content/uploads/2016/09/Hurawalhi_Aquarium_Sunrise.jpg">
+            <p>Facilities</p>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <img src="https://s3.amazonaws.com/busites_www/mvkeywestresort/banner_pool_green_towels_1506033934.jpg">
+            <p>Pool</p>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-3">
+            <img src="https://www.omnihotels.com/-/media/images/hotels/mtwash/restaurants/mtwash-omni-mount-washington-resort-cave-bar-1.jpg">
+            <p>Bar</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+<!-- </div>
+ -->
 
-
-  <div id="form-show-resort-id" class="form-show-resort">
-    <%= simple_form_for ([@resort, @booking]) do |f| %>
-    <%= f.input :start_date, as: :date, html5: true%>
-    <%= f.input :duration, input_html: { min: 0 } %>
-    <%= @total_price %>
-    <%= f.button :submit %>
-  <% end %>
-  </div>
-
-
-  <div class="container-images-show-resort">
-    <div class="row-show-resort">
-      <div class="col-sm-12 col-md-12 col-lg-12 visit-this-resort">
-        <h3 id="">Visit this resort</h3>
-      </div>
-    </div>
-    <div class="row-show-resort">
-      <div class="visit-resort">
-        <div class="col-sm-6 col-md-3 col-lg-3">
-          <img src="http://www.furnishburnish.com/wp-content/uploads/2012/07/making-cozy-home5.jpg">
-          <p>Rooms</p>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-          <img src="https://www.hurawalhi.com/wp-content/uploads/2016/09/Hurawalhi_Aquarium_Sunrise.jpg">
-          <p>Facilities</p>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-          <img src="https://s3.amazonaws.com/busites_www/mvkeywestresort/banner_pool_green_towels_1506033934.jpg">
-          <p>Pool</p>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-          <img src="https://www.omnihotels.com/-/media/images/hotels/mtwash/restaurants/mtwash-omni-mount-washington-resort-cave-bar-1.jpg">
-          <p>Bar</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-    <div class="banner" style=" background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://s3.amazonaws.com/iexplore_web/images/assets/000/005/491/original/dreamstime_m_21049254.jpg?1442330967');">
-      <div class="text-banner">
-        <h1 class="title">WELCOME HOME</h1>
-        <h3 class="description">Visit <%= @resort.country %> like you never saw</h3>
-      </div>
-    </div>
-
-  <div class="link-back-resorts">
-    <p> <%= link_to "Back to list", resorts_path %></p>
+<div class="show-banner" style=" background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.popsci.com/sites/popsci.com/files/images/2017/06/beach-wave.jpg');">
+  <div class="text-banner">
+    <h1 class="title">WELCOME HOME</h1>
+    <h3 class="description">Visit <%= @resort.country %> like you never saw</h3>
   </div>
 </div>
 
+<!-- <div class="link-back-resorts">
+  <p> <%= link_to "Back to list", resorts_path %></p>
+</div>
+</div> -->
+
 <footer class="footer-show-resort">
   <div class="relative-footer">
-    <img src="http://phm-hotels.com/friihotels/wp-content/uploads/2018/01/FRiiBaliEchoBeach.png">
     <p class="address-footer"> Resort in <%= @resort.address %></p>
     <div class="stars-footer">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
     </div>
-    <p class="price"> <%= @resort.price %>€ </p>
-    <p class="per-nigth">/nigth</p>
-    <a href="#booking_start_date"><button type="button" class="btn bouton-footer btn-primary">  Book now  </button></a>
   </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="footer-form">
+      <%= form_for([@resort, @booking], layout: :inline) do |f| %>
+        Start date: <%= f.date_field :start_date, as: :date, min: Date.today, label: "Start date" %>
+        Duration: <%= f.number_field :duration, min: 1, label: "Duration" %>
+        <span class="price"> <%= @resort.price %>€ </span>
+        <span class="per-nigth">/nigth</span>
+      <%= f.button submit: 'Bfewfwe' %>
+      <% end %>
+        </div>
+    </footer>
