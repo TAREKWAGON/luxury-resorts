@@ -11,7 +11,8 @@ class Resort < ApplicationRecord
 
   has_many :features, through: :feature_resorts
   has_many :bookings
-  has_many :favorites
+  has_many :favorite_resorts
+  has_many :favorited_by, through: :favorite_resorts, source: :user
   validates :name, presence: true
   validates :continent, presence: true
   validates :country, presence: true

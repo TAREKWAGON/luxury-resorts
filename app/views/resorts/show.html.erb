@@ -15,12 +15,28 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-8">
       <div class="resort-picture" style=" background-image: url('https://ihg.scene7.com/is/image/ihg/intercontinental-moorea-4021204937-2x1?fit=fit,1&wid=2400&hei=1200');">
-        <i class="far fa-heart"></i>
-        <i class="far fa-share-square"></i>
+        <% if current_user %>
+          <% if current_user.likes?(@resort) %>
+            <%= link_to favorite_resort_path(@resort, resort_id: @resort), method: :delete do %>
+              <%= icon("fas", "heart") %>
+            <% end %>
+          <% else %>
+            <%= link_to favorite_resorts_path(resort_id: @resort), method: :post do %>
+              <%= icon("far", "heart") %>
+            <% end %>
+          <% end %>
+          <i class="far fa-share-square"></i>
+          <% end  %>
+      <!--   <i class="far fa-heart"></i> -->
       </div>
     </div>
   </div>
 </div>
+
+<% if current_user %>
+  <%= link_to "favorite",   favorite_resort_path(@resort, type: "favorite"), method: :put %>
+  <%= link_to "unfavorite", favorite_resort_path(@resort, type: "unfavorite"), method: :put %>
+<% end %>
 
 <div class="big-container-show-resort">
   <div class="container-description-show-resort">
