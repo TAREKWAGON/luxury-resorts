@@ -9,8 +9,10 @@
 
      <% @resorts.each do |resort| %>
        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+
          <%= link_to resort_path(resort), target: :_blank do %>
            <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
+
            </div>
          <% end %>
          <div>

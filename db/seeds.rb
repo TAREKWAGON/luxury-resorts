@@ -47,20 +47,19 @@ resort12 = Resort.create(user: user1, name: 'The Ritz', continent: 'Asia', count
 resort13 = Resort.create(user: user1, name: 'Turquesa Hotel', continent: 'Carribean', country: 'Domincan Republic', address: '1Av. Anacaona 101, Santo Domingo, Dominican Republic', latitude: 18.438664, longitude: -69.969524, website: 'http://www.bolivia.com/', image: 'https://exp.cdn-hotels.com/hotels/6000000/5220000/5211800/5211746/5211746_85_z.jpg', price: '189', description: 'Bolivia resort description')
 resort15 = Resort.create(user: user1, name: 'Hyatt Regency Nice Palais de la Méditerranée', continent: 'Europe', country: 'France', address: '13 Prom. des Anglais, 06000 Nice, France', latitude: 43.695300, longitude: -7.263006, website: 'http://www.bolivia.com/', image: 'https://www.frenchtravel.com.au/media/catalog/product/cache/2/image/780x480/77ac07402bccf49cd411899c6484a428/h/y/hyatt_regency_nice_palais.jpg', price: '330', description: 'Bolivia resort description')
 
-resort1.features << feature1
-resort2.features << feature1
-resort3.features << feature1
-resort4.features << feature1
-resort5.features << feature2
-resort6.features << feature2
-resort7.features << feature3
-resort8.features << feature3
-resort9.features << feature4
-resort10.features << feature4
-resort11.features << feature5
-resort12.features << feature5
-resort13.features << feature5
-resort15.features << feature5
+resort1.features << [feature1, feature3]
+resort2.features << [feature1, feature3]
+resort3.features << [feature1, feature3]
+resort2.features << [feature1, feature5]
+resort4.features << [feature2, feature4]
+resort2.features << [feature2, feature4]
+resort5.features << [feature4, feature5]
+resort2.features << [feature4, feature5]
+resort6.features << [feature4, feature5]
+resort2.features << [feature2, feature2]
+resort7.features << [feature4, feature3]
+resort2.features << [feature2, feature3]
+
 
 
 booking1 = Booking.create(start_date: "July", duration: 6, price: 120, user: user1, resort: resort1)

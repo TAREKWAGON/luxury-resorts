@@ -13,7 +13,7 @@ class ResortsController < ApplicationController
 
     if params[:feature].present?
        sql_query = "features.name ILIKE :feature"
-      @resorts = @resorts.joins(:feature).where(sql_query, feature: "%#{params[:feature]}%")
+      @resorts = @resorts.joins(:features).where(sql_query, feature: "%#{params[:feature]}%")
     end
 
       @markers = @resorts.map do |resort|
