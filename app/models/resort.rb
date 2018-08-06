@@ -1,6 +1,9 @@
 class Resort < ApplicationRecord
   belongs_to :user
   has_many :feature_resorts
+  has_many :features, through: :feature_resorts
+  has_many :bookings
+  has_many :favorites
 
 
   # geocoded_by :address
@@ -9,9 +12,6 @@ class Resort < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  has_many :feature, through: :feature_resorts
-  has_many :bookings
-  has_many :favorites
   validates :name, presence: true
   validates :continent, presence: true
   validates :country, presence: true
