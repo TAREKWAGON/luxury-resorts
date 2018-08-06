@@ -1,32 +1,65 @@
 // Specific CSS for your home-page
 
-.bg {
-  background-image: asset-url('Surfing-Costa-Rica-Sunset.jpg');
-  /* Full height */
-  height: 100vh;
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+// .carousel {
+// display: flex;
+// }
+
+.carousel-control {
+ top: 50%;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-}
-
-.banner-text {
-  font-family: 'Roboto', sans-serif;
+h3 {
+  position: absolute;
+  left: 20%;
+  top: 49%;
   color: white;
-  padding-top: 200px;
+}
+h1 {
+  position: absolute;
+  top: 39%;
+  left: 30%;
+  color: white;
+  font-size: 55px;
+}
+
+input {
+border: solid #9898AA 0.5px;
+padding: 10px 40px 10px 10px;
+color: #9898AA;
+font-weight: 200;
+margin: 6px 1px;
+border-radius: 10px 10px;
+opacity: 0.8;
+font-size: 20px;
+margin-top: 10px;
+}
+
+.submit_tag {
+padding: 10px 10px 10px 10px;
 }
 
 
-.btn{
-margin-left:10px;
+.carousel .item {
+
+  height: 92vh;
+  background-color:#bbb;
+  overflow:hidden;
+}
+
+.carousel img {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100vh;
 }
 
 .search-form {
-  padding-top: 50px;
+  position: absolute;
+  top: 60%;
+  left: 28%;
+  margin-top: 10px;
 }
+
