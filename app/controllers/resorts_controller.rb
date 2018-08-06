@@ -28,6 +28,22 @@ class ResortsController < ApplicationController
     @booking = Booking.new
   end
 
+  def favorite
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @resort
+      redirect_to :back, notice: "You favorited #{@resort.name}"
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@resort)
+      redirect_to :back, notice: "Unfavorited #{@resort.name}"
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
 
   private
 
