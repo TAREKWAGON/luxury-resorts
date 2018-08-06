@@ -1,5 +1,3 @@
-
-
 <h3>Resorts</h3>
 <!-- <p>Find me in app/views/resorts/index.html.erb</p> -->
 <div class="line">
@@ -11,10 +9,27 @@
 
      <% @resorts.each do |resort| %>
        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-         <%= link_to resort_path(resort) do %>
-           <div class="card-resort" class="resort" style="background-image: url(<%= image_path resort.image %>);">
+
+         <%= link_to resort_path(resort), target: :_blank do %>
+           <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
+
            </div>
          <% end %>
+         <div>
+           <% if current_user %>
+          <% if current_user.likes?(resort) %>
+            <%= link_to favorite_resort_path(resort, resort_id: resort), method: :delete do %>
+              <%= icon("fas", "heart") %>
+            <% end %>
+          <% else %>
+            <%= link_to favorite_resorts_path(resort_id: resort), method: :post do %>
+              <%= icon("far", "heart") %>
+            <% end %>
+          <% end %>
+          <i class="far fa-share-square"></i>
+          <% end  %>
+         </div>
+
          <div class=" text ">
            <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
            <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
