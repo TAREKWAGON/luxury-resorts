@@ -33,11 +33,6 @@
   </div>
 </div>
 
-<% if current_user %>
-  <%= link_to "favorite",   favorite_resort_path(@resort, type: "favorite"), method: :put %>
-  <%= link_to "unfavorite", favorite_resort_path(@resort, type: "unfavorite"), method: :put %>
-<% end %>
-
 <div class="big-container-show-resort">
   <div class="container-description-show-resort">
     <div class="row-show-resort-description">

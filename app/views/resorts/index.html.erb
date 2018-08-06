@@ -15,6 +15,21 @@
            <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
            </div>
          <% end %>
+         <div>
+           <% if current_user %>
+          <% if current_user.likes?(resort) %>
+            <%= link_to favorite_resort_path(resort, resort_id: resort), method: :delete do %>
+              <%= icon("fas", "heart") %>
+            <% end %>
+          <% else %>
+            <%= link_to favorite_resorts_path(resort_id: resort), method: :post do %>
+              <%= icon("far", "heart") %>
+            <% end %>
+          <% end %>
+          <i class="far fa-share-square"></i>
+          <% end  %>
+         </div>
+
          <div class=" text ">
            <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
            <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
