@@ -13,7 +13,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div style="min-height: calc(100vh - 170px);">
+      <%= yield %>
+    </div>
      <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
