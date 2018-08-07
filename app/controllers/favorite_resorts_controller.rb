@@ -1,9 +1,10 @@
 class FavoriteResortsController < ApplicationController
-  before_action :set_resort
+  before_action :set_resort, only: [:create, :destroy]
   skip_after_action :verify_authorized
 
   def index
-    @resorts = Resorts.all
+
+    @resorts = Resort.all
   end
 
 
