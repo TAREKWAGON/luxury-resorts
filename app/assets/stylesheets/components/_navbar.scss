@@ -10,6 +10,18 @@
   justify-content: space-between;
 }
 
+.home-signup {
+  padding-right: 20px;
+  border: solid #9898AA 0.5px;
+  color: #9898AA;
+  font-weight: 200;
+  margin: 6px 1px;
+  border-radius: 10px 10px;
+  opacity: 0.8;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -17,8 +29,8 @@
 
 /* User Avatar */
 .navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
 }
 
