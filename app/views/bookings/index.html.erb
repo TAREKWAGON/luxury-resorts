@@ -12,7 +12,8 @@
             <div class="name"><%= " Total Price: € #{booking.total_price}" %></div>
           </div>
           <div class="right-container">
-           <div class="card-booking" class="resort" style="background-image: url(<%= image_path booking.resort.image %>);"></div>
+         <%= link_to resort_path(resort), target: :_blank do %>
+       <div class="card-resort" class="resort" style="background-image: url(<%= image_path resort.image %>);">
           </div>
         </div>
       </div>
