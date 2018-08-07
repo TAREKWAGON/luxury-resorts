@@ -36,14 +36,15 @@
         </div>
         <div class="fav-count">
           <br>
-          <h5>There is four resorts</h5>
+          <h5>There is <%= current_user.favorite_resorts.count %>  resorts</h5>
         </div>
       </div>
       <div class="fav-cards">
         <% if current_user.favorite_resorts %>
           <% current_user.favorite_resorts.each do |resort| %>
+          <%= link_to resort_path(resort), target: :_blank do %>
           <img class="image-dynamic" src=<%= resort.image %>>
-
+          <% end  %>
           <div class="fav-card-content"></div>
             <p class="country-continent-fav"> <%= resort.country %>, <%= resort.continent %></p>
             <p class="fav-card-name"> <%= resort.name %></p>
@@ -52,8 +53,6 @@
         <% end %>
       </div>
     </div>
-
-
 
     <div class=" column-map">
       <div class="fav-map" id="map" data-markers="<%= @markers.to_json %>"></div>
