@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -9,12 +9,12 @@
 
     <% if user_signed_in? %>
 
-      <!-- Links when logged in -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+    <!-- Links when logged in -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to bookings_path, "My bookings" %></li>
+          <li><%= link_to "My bookings", bookings_path %></li>
           <li><a href="#">My favorites</a></li>
           <li><a href="#">Log Out</a></li>
           <li><a href="#">My bookings</a></li>
@@ -23,20 +23,21 @@
         </ul>
       </div>
     </div>
-  </div>
-    <!--   <%= link_to t(".bookin", default: "Bookings"), bookings_path, class: "btn btn-default" %>
-      <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-warning" do %>
-            <%= t(".sign_out", default: "Log out") %>
-      <% end %> -->
 
-      <% else %>
-        <!-- Login link (when logged out) -->
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-default" %>
-        <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "btn btn-warning" %>
-      <% end %>
+    <% else %>
+  <!-- Login link (when logged out) -->
+  <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-default" %>
+  <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "btn btn-warning" %>
+    <% end %>
   </div>
+  <%# link_to t(".bookin", default: "Bookings"), bookings_path, class: "btn btn-default" %>
+  <%# link_to destroy_user_session_path, method: :delete, class: "btn btn-warning" do %>
+  <%# t(".sign_out", default: "Log out") %>
+  <%# end %>
 
-  <!-- Dropdown list appearing on mobile only -->
+</div>
+
+<!-- Dropdown list appearing on mobile only -->
 <!--   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
