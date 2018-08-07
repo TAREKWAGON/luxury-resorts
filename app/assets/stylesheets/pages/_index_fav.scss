@@ -1,0 +1,71 @@
+.image-dynamic {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.fav-map {
+  height: 100vh !important;
+  position: sticky !important;
+}
+
+.column-content {
+  width: 35%;
+  margin-left: 30px;
+}
+
+.column-map {
+  flex: 1;
+}
+
+.fav-container {
+  display: flex;
+}
+
+.fav-head-content {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.country-continent-fav, .fav-card-name {
+  margin: 0px;
+}
+
+.country-continent-fav {
+  font-size: 15px;
+  color: rgb(148, 0, 0);
+  text-transform: uppercase;
+}
+
+.fav-card-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(100, 94, 94);
+}
+
+.fav-card-price {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.fav-cards {
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
