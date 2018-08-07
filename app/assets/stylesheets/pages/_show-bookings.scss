@@ -27,8 +27,8 @@
 
 .container-sub-info {
   border: 1px solid lightgrey;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .logo-name-show-resort {
@@ -44,72 +44,64 @@
   height: 100px;
 }
 
-
-
 .arrived-show-booking{
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-top: 20px;
   border-bottom: 1px solid lightgrey;
-  position: relative;
 }
 
 .arrived-show-booking h5 {
-  font-weight: bold;
-  display: flex;
+  // display: flex;
   align-items: center;
 }
 
-.arrived-show-booking p {
+.arrived-show-booking p
+ {
   font-weight: lighter;
-  display: flex;
-  position: absolute;
-  top: 10px;
 }
 
 .address-show-booking {
-  padding-bottom: 50px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   border-bottom: 1px solid lightgrey;
-  position: relative;
+
 }
 
-.address-show-booking h5 {
-  font-weight: bold;
+.address-show-booking p {
+font-weight: lighter;
 }
 
-.p1 {
-  position: absolute;
-  top: 10px;
-}
-
-.p2 {
-  position: absolute;
-  top: 30px;
-}
-
-.p3 {
-  position: absolute;
-  top: 50px;
+.p-text {
+  margin: 12.5px 0;
 }
 
 .price-show-booking {
   padding-bottom: 20px;
   padding-top: 20px;
-  position: relative;
 }
 
 .price-show-booking h5 {
-  font-weight: bold;
+ padding-bottom: 20px;
 }
 
-.price-show-booking p {
-  position: absolute;
-  top: 10px;
+.resort-table {
+  margin-top: 2px;
+  padding-top: 20px;
+  border: 1px solid lightgrey;
+text-align: center;
+
+
 }
 
 .resort-picture-show-booking {
-  margin-top: 20px;
+
   margin-bottom: 20px;
+  height: 340px;
+  margin-right: 30px;
+  background-size: cover !important;
+  background-position: center;
+  position: relative;
+  width: 100%;
 }
 
 

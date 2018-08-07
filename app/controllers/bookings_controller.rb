@@ -20,8 +20,13 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @resort = @booking.resort
+    @markers = [{
+      lat: @resort.latitude,
+      lng: @resort.longitude
+    }]
     authorize @booking
   end
+
 
   def edit
     @booking = Booking.find(params[:id])

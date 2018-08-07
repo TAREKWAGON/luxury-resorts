@@ -23,13 +23,13 @@
                 <h5> Arrived </h5>
               </div>
               <div class="col-sm-6 col-md-3 col-lg-3">
-                <p><%= @booking.start_date %></p>
+                <p class="p-text"><%= @booking.start_date %></p>
               </div>
               <div class="col-sm-6 col-md-3 col-lg-3">
                 <h5> Duration </h5>
               </div>
               <div class="col-sm-6 col-md-3 col-lg-3">
-                <p><%= @booking.duration %> days</p>
+                <p class="p-text"><%= @booking.duration %> days</p>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
                 <h5>Price</h5>
               </div>
               <div class="col-sm-9 col-md-9 col-lg-9">
-                <p><%= @booking.total_price %> €</p>
+                <p class="p-text"><%= @booking.total_price %> €</p>
               </div>
             </div>
           </div>
@@ -59,18 +59,18 @@
         <div id="map" data-markers="<%= @markers.to_json %>"></div>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-5">
+         <div class="row">
+          <div class="resort-picture resort-picture-show-booking" style=" background-image: url(<%= image_path @booking.resort.image %>);">
+          </div>
+        </div>
         <div class="row">
-          <div class="logo-name-show-resort">
-            <img src="http://phm-hotels.com/friihotels/wp-content/uploads/2018/01/FRiiBaliEchoBeach.png">
+          <div class="resort-table">
             <p>Frii Hotel Bali</p>
             <p>You need some help to plan your trip ? <br> Contact the resort to get some help.</p>
             <button type="button" class="btn btn-danger">Contact the resort</button>
             <p><i class="fas fa-phone-square"></i> +65 000 0000 00</p>
           </div>
         </div>
-        <div class="row">
-          <div class="resort-picture resort-picture-show-booking" style=" background-image: url('https://ihg.scene7.com/is/image/ihg/intercontinental-moorea-4021204937-2x1?fit=fit,1&wid=2400&hei=1200');">
-          </div>
         </div>
       </div>
     </div>

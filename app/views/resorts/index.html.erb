@@ -6,9 +6,9 @@
 <div class="main-container">
  <div class="card-container">
    <div class="row deleting-padding">
-
-     <% @resorts.each do |resort| %>
-     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+     
+     <% @resorts.uniq.each do |resort| %>
+       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 
        <%= link_to resort_path(resort), target: :_blank do %>
        <div class="card-resort" class="resort" style="background-image: url(<%= image_path resort.image %>);">
@@ -30,11 +30,9 @@
               <%= icon("far", "heart") %>
             <% end %>
 
-           <% end %>
-          <i class="far fa-share-square"></i>
-         <% end  %>
-       </div>
-
+          <% end %>
+          <% end  %>
+         </div>
 
        <div class=" text ">
          <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
