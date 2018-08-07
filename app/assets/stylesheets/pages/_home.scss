@@ -2,28 +2,21 @@
 
 
 .carousel {
- background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
+
 }
 
-// .carousel-control {
 
-// }
-
-// .flexbox {
-
-// flex: 1 0 auto;
-// }
-
-h3 {
-  position: absolute;
-  left: 20%;
-  top: 49%;
+.home-h3 {
+  // position: absolute;
+  // left: 20%;
+  // top: 49%;
   color: white;
+  margin: 0;
 }
-h1 {
-  position: absolute;
-  top: 39%;
-  left: 30%;
+.home-h1 {
+  // position: absolute;
+  // top: 39%;
+  // left: 30%;
   color: white;
   font-size: 55px;
 }
@@ -53,11 +46,21 @@ font-size: 20px;
 margin-top: 10px;
 }
 
+.absolute-container {
+ position: absolute;
+ top: 43%;
+ left: 0;
+ text-align: center;
+ width: 100%;
+}
 .carousel .item {
 
   height: 92vh;
   background-color:#bbb;
   overflow:hidden;
+  background: cover !important;
+  background-repeat: no-repeat;
+
 }
 
 .carousel img {
@@ -70,9 +73,9 @@ margin-top: 10px;
 }
 
 .search-form {
-  position: absolute;
-  top: 60%;
-  left: 28%;
+  // position: absolute;
+  // top: 60%;
+  // left: 28%;
   margin-top: 10px;
 }
 
