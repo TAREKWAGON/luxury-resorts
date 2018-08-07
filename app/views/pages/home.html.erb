@@ -1,5 +1,5 @@
 
-<div class="home-container">
+<div class="flexbox">
 <!-- Carousel
 ================================================== -->
 <div class="carousel slide" id ="slider" data-ride="carousel1">
@@ -31,7 +31,7 @@
           <%= form_tag(resorts_path, method: :get) do %>
           <%= text_field_tag :location, nil, placeholder: 'Where?' %>
           <%= text_field_tag :feature, nil, placeholder: 'What activity?' %>
-          <%= submit_tag 'Search', name: nil %>
+          <%= submit_tag 'Search', name: nil, class:"submit" %>
           <% end %>
   </div>
 
