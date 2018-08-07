@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroying all"
 Booking.destroy_all
 Feature.destroy_all
 Favorite.destroy_all
@@ -13,16 +14,17 @@ User.destroy_all
 
 
 SLEEP_TIME = 10
-
+puts "user created"
 user1 = User.create!(email:'email@email.com', password:'password', is_owner: "False")
 
+puts "features created"
 feature1 = Feature.create(name: 'Surfing')
 feature2 = Feature.create(name: 'Yoga')
 feature3 = Feature.create(name: 'Eco')
 feature4 = Feature.create(name: 'Vegan')
 feature5 = Feature.create(name: 'Unicorn watching')
 
-
+puts "building resorts"
 resort1 = Resort.create(user: user1, name: 'Shanghai Fenyang Boutique Hotel', continent: 'Asia', country: 'China', address: 'No.45 Fenyang Road, Xuhui, 210008 Shanghai, China', latitude: 31.212558, longitude: 121.454990, website: 'http://www.china.com/', image: 'https://pix10.agoda.net/hotelImages/334/334882/334882_14061609470019861047.jpg?s=1024x768', price: '100', description: 'China resort description')
 
 resort2 = Resort.create(user: user1, name: 'AYANA Resort and Spa, BALI', continent: 'Asia', country: 'Indonesia', address: 'Karang Mas Estate, Jalan Karang Mas Sejahtera, 80364 Jimbaran, Indonesia', latitude: -8.788849, longitude: 115.155452, website: 'http://www.indonesia.com/', image: 'https://t-ec.bstatic.com/images/hotel/max1024x768/836/8366335.jpg', price: '50', description: 'Indonesia resort description')
@@ -48,20 +50,21 @@ resort12 = Resort.create(user: user1, name: 'The Ritz', continent: 'Asia', count
 resort13 = Resort.create(user: user1, name: 'Turquesa Hotel', continent: 'Carribean', country: 'Domincan Republic', address: '1Av. Anacaona 101, Santo Domingo, Dominican Republic', latitude: 18.438664, longitude: -69.969524, website: 'http://www.bolivia.com/', image: 'https://exp.cdn-hotels.com/hotels/6000000/5220000/5211800/5211746/5211746_85_z.jpg', price: '189', description: 'Bolivia resort description')
 resort15 = Resort.create(user: user1, name: 'Hyatt Regency Nice Palais de la Méditerranée', continent: 'Europe', country: 'France', address: '13 Prom. des Anglais, 06000 Nice, France', latitude: 43.695300, longitude: -7.263006, website: 'http://www.bolivia.com/', image: 'https://www.frenchtravel.com.au/media/catalog/product/cache/2/image/780x480/77ac07402bccf49cd411899c6484a428/h/y/hyatt_regency_nice_palais.jpg', price: '330', description: 'Bolivia resort description')
 
+puts "feature building for resorts"
 resort1.features << [feature2, feature3]
 resort2.features << [feature2, feature3]
 resort3.features << [feature2, feature3]
-resort2.features << [feature2, feature5]
-resort4.features << [feature2, feature4]
-resort2.features << [feature2, feature4]
-resort5.features << [feature2, feature5]
-resort2.features << [feature2, feature5]
-resort6.features << [feature2, feature5]
-resort2.features << [feature2, feature2]
-resort7.features << [feature2, feature3]
-resort2.features << [feature2, feature3]
+resort4.features << [feature2, feature5]
+resort5.features << [feature2, feature4]
+resort6.features << [feature2, feature4]
+resort7.features << [feature2, feature5]
+resort8.features << [feature2, feature5]
+resort9.features << [feature2, feature5]
+resort10.features << [feature2, feature2]
+resort11.features << [feature2, feature3]
+resort13.features << [feature2, feature3]
 
 
-
+puts "bookings created"
 booking1 = Booking.create(start_date: "July", duration: 6, price: 120, user: user1, resort: resort1)
 
