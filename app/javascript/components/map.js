@@ -204,7 +204,7 @@ const initMap = function() {
       map.setZoom(2);
     } else if (markers.length === 1) {
       map.setCenter(markers[0].lat, markers[0].lng);
-      map.setZoom(14);
+      map.setZoom(10);
     } else {
       map.fitLatLngBounds(markers);
     }
