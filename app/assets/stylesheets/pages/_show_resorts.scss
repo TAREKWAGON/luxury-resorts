@@ -17,10 +17,11 @@
   color: rgb(75, 100, 106);
   font-size: 15px;
 }
-// .resort-description {
-//   color: rgb(75, 100, 106);
-//   font-size: 15px;
-// }
+
+.resort-description {
+  color: rgb(75, 100, 106);
+  font-size: 15px;
+}
 
 .resort-name h3 {
   position: absolute;
@@ -140,15 +141,14 @@ box-shadow: 0px 0px 2px 0px rgba(0,0,0,1);
   margin-top: 450px;
 }
 
-
-.banner h3 {
+.text-banner h3 {
   margin-bottom: 50px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: lighter;
   font-size: 25px;
 }
 
-.banner h1 {
+.text-banner h1 {
   margin-bottom: 35px;
   font-size: 50px;
 }
@@ -268,4 +268,38 @@ body {
 //   margin-bottom: 30px;
 //   margin-top: 20px;
 // }
+
+.title-show-resort {
+  font-size: 60px;
+}
+
+.description-show-resort {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

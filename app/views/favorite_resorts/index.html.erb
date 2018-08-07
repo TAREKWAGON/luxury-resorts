@@ -1,0 +1,31 @@
+<div class="big-container-fav">
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="row">
+        <div class="text-fav-right">
+          <p>My favourites resorts</p>
+        </div>
+      </div>
+      <div class="row">
+        <% @resorts.each do |resort| %>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <%= link_to resort_path(resort) do %>
+              <div class="card" class="resort" style="background-image: url(<%= image_path resort.image %>);">
+              </div>
+            <% end %>
+            <div class=" text ">
+            <div input type="text" class="location"><%= "#{resort.country}, #{resort.continent} " %> </div>
+            <div input type="text" class="name"> <%= link_to resort.name, resort_path(resort) %></div>
+            <div input type="text" class="price-index"><%="€#{resort.price} per/night" %></div>
+          </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="fav-map">
+        <div id="map" data-markers="<%= @markers.to_json %>"></div>
+      </div>
+    </div>
+  </div>
+</div>

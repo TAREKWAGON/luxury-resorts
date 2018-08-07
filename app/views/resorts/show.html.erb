@@ -17,7 +17,7 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-8">
 
-      <div class="resort-picture" style=" background-image: url('https://ihg.scene7.com/is/image/ihg/intercontinental-moorea-4021204937-2x1?fit=fit,1&wid=2400&hei=1200');">
+      <div class="resort-picture" style=" background-image: url(<%= image_path @resort.image %>);">
         <% if current_user %>
           <% if current_user.likes?(@resort) %>
             <%= link_to favorite_resort_path(@resort, resort_id: @resort), method: :delete do %>
@@ -32,10 +32,10 @@
           <% end  %>
       <!--   <i class="far fa-heart"></i> -->
 
-      <div class="resort-picture" style=" background-image: url(<%= image_path @resort.image %>);">
+     <!--  <div class="resort-picture" style=" background-image: url(<%= image_path @resort.image %>);">
         <i class="far fa-heart"></i>
         <i class="far fa-share-square"></i>
-
+ -->
       </div>
     </div>
   </div>
@@ -83,9 +83,9 @@
  -->
 
 <div class="show-banner" style=" background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.popsci.com/sites/popsci.com/files/images/2017/06/beach-wave.jpg');">
-  <div class="text-banner">
-    <h1 class="title">WELCOME HOME</h1>
-    <h3 class="description">Visit <%= @resort.country %> like you never saw</h3>
+  <div class="text-banner-show-resort">
+    <h4 class="title-show-resort">WELCOME HOME</h4>
+    <p class="description-show-resort">Visit <%= @resort.country %> like you never saw</p>
   </div>
 </div>
 
