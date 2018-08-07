@@ -4,7 +4,14 @@ class FavoriteResortsController < ApplicationController
 
   def index
 
-    @resorts = Resort.all
+    @resorts = current_user.favorite_resorts
+
+    @markers = @resorts.map do |resort|
+    {
+      lat: resort.latitude,
+      lng: resort.longitude
+    }
+    end
   end
 
 
