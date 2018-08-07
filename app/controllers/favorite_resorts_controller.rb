@@ -9,11 +9,8 @@ class FavoriteResortsController < ApplicationController
 
 
   def create
-    if Favorite.create(favorited_id: @resort.id, user: current_user)
-      redirect_to @resort
-    else
-      redirect_to resorts_path
-    end
+    current_user.favorite_resorts << @resort
+    redirect_to request.referer
     # if current_page?(resorts_path)
     #   redirect_to resorts_path
     # else
@@ -23,7 +20,7 @@ class FavoriteResortsController < ApplicationController
 
   def destroy
     Favorite.where(favorited_id: @resort.id, user_id: current_user.id).first.destroy
-    redirect_to @resort
+    redirect_to request.referer
     # if current_user
     #   redirect_to resorts_path
     # end
