@@ -7,7 +7,7 @@
  <div class="card-container">
    <div class="row deleting-padding">
 
-     <% @resorts.each do |resort| %>
+     <% @resorts.uniq.each do |resort| %>
        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 
          <%= link_to resort_path(resort), target: :_blank do %>
