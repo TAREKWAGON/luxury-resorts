@@ -11,21 +11,17 @@
   </ol>
 
   <div class="carousel-inner">
-    <div class="item active" id="item1">
-      <img src="https://cdn.downunderendeavours.com/wp-content/uploads/2014/08/D112-hero2000x837-Namale_Villas_CivaDuavata_InfinityPool.jpg "style="height: 100%">
+    <div class="item active" id="item1" style="background-image: linear-gradient(rgba(222, 191, 153, 0.19), rgba(39, 13, 13, 0.38) ), url('https://www.myvacationpages.com/data/post-images/2013/12/the-beloved-resort.jpg')">
     </div>
 
-    <div class="item" id="item2">
-         <img src="https://images.unsplash.com/photo-1445546857131-5fc39d1c51f0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=15c18779cdcf2add3f86f6f2a8e37a14&auto=format&fit=crop&w=1188&q=80" style="height: 100%">
+    <div class="item" style="background-image: linear-gradient(rgba(222, 191, 153, 0.19), rgba(39, 13, 13, 0.38) ), url('https://www.mykonosgrand.gr/wp-content/uploads/2014/06/homepage-slide2-01-v2.jpg')">
     </div>
 
-    <div class="item">
-       <img src="https://images.unsplash.com/photo-1524319084528-fd69c1846f2a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aab8911eaf98f4375c99fab2d40f5ad6&auto=format&fit=crop&w=1074&q=80" style="height: 100%">
-    </div>
+    <div class="item" style="background-image: linear-gradient(rgba(222, 191, 153, 0.19), rgba(39, 13, 13, 0.38) ), url('https://cdn.downunderendeavours.com/wp-content/uploads/2014/08/D112-hero2000x837-Namale_Villas_CivaDuavata_InfinityPool.jpg')">
   </div>
-
-  <h1>EXPLORE AND ESCAPE</h1>
-  <h3>Plan your luxury holiday with the activities you love</h3>
+<div class="absolute-container">
+  <h1 class="home-h1">EXPLORE AND ESCAPE</h1>
+  <h3 class="home-h3">Plan your luxury holiday with the activities you love</h3>
 
   <div class="search-form">
           <%= form_tag(resorts_path, method: :get) do %>
@@ -34,6 +30,7 @@
           <%= submit_tag 'Search', name: nil, class:"submit" %>
           <% end %>
   </div>
+</div>
 
   <!-- Controls -->
   <a class="left carousel-control" href="#slider" data-slide="prev" role="button"><span class=" icon-prev"></span></a>
