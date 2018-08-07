@@ -9,7 +9,7 @@ class FavoriteResortsController < ApplicationController
 
 
   def create
-    Favorite.create(favorited: @resort, user: current_user)
+    Favorite.create(favorited_id: @resort.id, user: current_user)
     redirect_back(fallback_location: "")
     # if current_page?(resorts_path)
     #   redirect_to resorts_path
