@@ -1,13 +1,18 @@
 // Specific CSS for your home-page
 
 
-// .carousel {
-// display: flex;
+.carousel {
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
+}
+
+// .carousel-control {
+
 // }
 
-.carousel-control {
- top: 50%;
-}
+// .flexbox {
+
+// flex: 1 0 auto;
+// }
 
 h3 {
   position: absolute;
@@ -23,6 +28,19 @@ h1 {
   font-size: 55px;
 }
 
+.submit {
+background-color: #4c4949;
+padding: 10px 10px 10px 10px;
+opacity: none;
+opacity: 0.9;
+color: white;
+}
+
+.submit:hover {
+  opacity: 0.9;
+  background: #1f1c1c;
+}
+
 input {
 border: solid #9898AA 0.5px;
 padding: 10px 40px 10px 10px;
@@ -34,11 +52,6 @@ opacity: 0.8;
 font-size: 20px;
 margin-top: 10px;
 }
-
-.submit_tag {
-padding: 10px 10px 10px 10px;
-}
-
 
 .carousel .item {
 
