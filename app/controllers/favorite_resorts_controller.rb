@@ -2,6 +2,10 @@ class FavoriteResortsController < ApplicationController
   before_action :set_resort
   skip_after_action :verify_authorized
 
+  def index
+    @resorts = Resorts.all
+  end
+
 
   def create
     Favorite.create(favorited: @resort, user: current_user)
